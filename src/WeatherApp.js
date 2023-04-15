@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import weather from "./weather.json";
 
 export default function WeatherApp() {
 
@@ -25,10 +26,30 @@ export default function WeatherApp() {
         
     }
 
+
+    // get new weather data when coordinates change
     useEffect(() => {
-        console.log(coordinates);
-        // now we will set the weather data given the new coordinates
+        if(coordinates) {
+            console.log(coordinates);
+            getWeatherData();
+            //setWeatherData(weather);
+            //console.log(weather);
+        }
     }, [coordinates])
+
+    function getWeatherData() {
+        const weatherURL = new URL("https://api.openweathermap.org/data/2.5/onecall?");
+        weatherURL.searchParams.append("lat", coordinates.latitude);
+        weatherURL.searchParams.append("lon", coordinates.longitude);
+        weatherURL.searchParams.append("appid", API_KEY);
+        console.log(weatherURL.href);
+        fetch(weatherURL.href)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((e) => console.log("Error: " + e));
+    }
 
 
     return (
