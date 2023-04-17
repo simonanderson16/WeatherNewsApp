@@ -65,8 +65,8 @@ export default function WeatherApp() {
         <>
         <h1>Weather App</h1>
         <div className="beginning-input">
-            <h3>City: </h3>
-            <TextField variant="filled" type="text" onChange={(e) => setCity(e.target.value)} style={{marginRight: "10px"}}/>
+            <h2>City: </h2>
+            <TextField variant="standard" type="text" onChange={(e) => setCity(e.target.value)} style={{marginRight: "10px"}}/>
             <Button variant="contained" onClick={() => fetchAPIData()}>Submit</Button>
         </div>
         {weatherData && <div>
