@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import weather from "./weather.json";
+// import weather from "./weather.json";
+import { Button, Grid, TextField } from '@mui/material';
+import CurrentWeather from "./CurrentWeather";
+import News from "./News";
+import UpcomingWeather from "./UpcomingWeather";
+import HourlyForecast from "./HourlyForecast";
+import DailyForecasts from "./DailyForecasts";
+import "./styles.css";
+
 
 export default function WeatherApp() {
 
@@ -47,6 +55,7 @@ export default function WeatherApp() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
+                setWeatherData(data);
             })
             .catch((e) => console.log("Error: " + e));
     }
@@ -56,10 +65,38 @@ export default function WeatherApp() {
         <>
         <h1>Weather App</h1>
         <div className="beginning-input">
-            <p>City: </p>
-            <input type="text" onChange={(e) => setCity(e.target.value)}/>
-            <button onClick={() => fetchAPIData()}>Submit</button>
+            <h3>City: </h3>
+            <TextField variant="filled" type="text" onChange={(e) => setCity(e.target.value)} style={{marginRight: "10px"}}/>
+            <Button variant="contained" onClick={() => fetchAPIData()}>Submit</Button>
         </div>
+        {weatherData && <div>
+        <Grid container spacing={2}>
+            <Grid item xs={8}>
+                <div className="grid-box">
+                <h2>Current Weather</h2>
+                <CurrentWeather data={weatherData.current}/>
+                </div>
+            </Grid>
+            <Grid item xs={4}>
+                <div className="grid-box">
+                <h2>News</h2>
+                <News/>
+                </div>
+            </Grid>
+            <Grid item xs={8}>
+                <div className="grid-box">
+                <h2>Hourly Forecast</h2>
+                <HourlyForecast data={weatherData.hourly}/>
+                </div>
+            </Grid>
+            <Grid item xs={8}>
+                <div className="grid-box">
+                <h2>Daily Forecasts</h2>
+                <DailyForecasts data={weatherData.daily}/>
+                </div>
+            </Grid>
+        </Grid>
+        </div>}
         </>
     );
 }

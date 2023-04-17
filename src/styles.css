@@ -1,0 +1,16 @@
+* {
+    margin-left: 10px;
+}
+
+.beginning-input {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.grid-box {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 2%;
+    margin-bottom: 20px;
+}
