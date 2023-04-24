@@ -18,8 +18,8 @@ export default function CurrentWeather({data}) {
 
     return (
         <>
+        <img src={"https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"}/>
         <p>Conditions: {toTitleCase(data.weather[0].description)}</p>
-        <p>ICON HERE</p>
         <p>Temperature: {kelvinToFahrenheit(data.temp)}° F</p>
         <p>Feels Like: {kelvinToFahrenheit(data.feels_like)}° F</p>
         </>

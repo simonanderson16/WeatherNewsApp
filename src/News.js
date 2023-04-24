@@ -7,7 +7,51 @@ export default function News() {
         <li>Story 3</li>
         <li>Story 4</li>
         <li>Story 5</li>
-        <p></p>
+        <p>sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        sjbsjwhdgvewhdgc
+        
+        </p>
         </>
     );
 }

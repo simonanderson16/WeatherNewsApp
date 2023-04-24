@@ -71,28 +71,28 @@ export default function WeatherApp() {
         </div>
         {weatherData && <div>
         <Grid container spacing={2}>
-            <Grid item xs={8}>
-                <div className="grid-box">
-                <h2>Current Weather</h2>
+            <Grid item xs={4}>
+                <div className="grid-box" style={{ height: "370px"}}>
+                <h2>Current Weather in {city}</h2>
                 <CurrentWeather data={weatherData.current}/>
                 </div>
             </Grid>
-            <Grid item xs={4}>
-                <div className="grid-box">
-                <h2>News</h2>
-                <News/>
-                </div>
-            </Grid>
             <Grid item xs={8}>
-                <div className="grid-box">
+                <div className="grid-box" style={{ height: "370px"}}>
                 <h2>Hourly Forecast</h2>
                 <HourlyForecast data={weatherData.hourly}/>
                 </div>
             </Grid>
-            <Grid item xs={8}>
-                <div className="grid-box">
+            <Grid item xs={6}>
+                <div className="grid-box" style={{ height: "370px"}}>
                 <h2>Daily Forecasts</h2>
                 <DailyForecasts data={weatherData.daily}/>
+                </div>
+            </Grid>
+            <Grid item xs={6}>
+                <div className="grid-box" style={{ height: "370px", overflowY: "scroll" }}>
+                <h2>Top News Stories</h2>
+                <News/>
                 </div>
             </Grid>
         </Grid>
