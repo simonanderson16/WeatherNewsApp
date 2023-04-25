@@ -1,6 +1,13 @@
 export default function HourlyForecast({data}) {
     data = data.slice(0, 24);
 
+    const now = new Date();
+    now.setMinutes(0);
+    now.setSeconds(0);
+    now.setMilliseconds(0);
+    const startHour = now.getHours();
+    const hours = Array.from({ length: 24 }, (_, i) => (startHour + i + 1) % 24);
+
     function kelvinToFahrenheit(kelvin) {
         const fahrenheit = (kelvin - 273.15) * 9/5 + 32;
         return Math.round(fahrenheit);
@@ -29,7 +36,8 @@ export default function HourlyForecast({data}) {
         <div style={{ overflowX: 'scroll', marginRight: "20px" }}>
           <div style={{ display: 'flex', flexDirection: 'row'}}>
             {data.map((hour, index) => (
-              <div key={index} style={{ marginRight: '20px', marginBottom: "20px", border: "solid 1px black", borderRadius: "5px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"  }}>
+              <div key={index} style={{ marginRight: '20px', marginBottom: "20px", border: "solid 1px black", borderRadius: "15px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", backgroundColor: "#92afea"  }}>
+                <p style={{fontWeight: "bolder"}}>{hours[index] + ":00"}</p>
                 <img src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} />
                 <p>{kelvinToFahrenheit(hour.temp)}° F</p>
                 <p>{toTitleCase(hour.weather[0].description)}</p>

@@ -4,7 +4,7 @@ import WeatherApp from './WeatherApp';
 
 function App() {
   return (
-    <WeatherApp/>
+    <div style={{marginRight: "20px"}}><WeatherApp/></div>
   );
 }
 

@@ -1,5 +1,6 @@
 * {
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 .beginning-input {
@@ -7,18 +8,22 @@
     margin-right: 10px;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 20px;
     width: auto;
     padding-left: 2%;
+    background-color: white;
+    color: black;
 }
 
+
 .grid-box {
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 20px;
     padding-left: 2%;
     margin-bottom: 20px;
     margin-right: 10px;
+    background-color: white;
 }
 
 ::-webkit-scrollbar {
