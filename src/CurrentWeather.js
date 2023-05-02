@@ -19,7 +19,7 @@ export default function CurrentWeather({data}) {
     return (
         <>
         <img style={{maxWidth: '100%', height: '150px', maxHeight: '300px'}} src={"https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"}/>
-        <h2>{toTitleCase(data.weather[0].description)}</h2>
+        <h2 style={{textDecoration: 'none'}}>{toTitleCase(data.weather[0].description)}</h2>
         <h3>{kelvinToFahrenheit(data.temp)}° F</h3>
         <h3>Feels Like: {kelvinToFahrenheit(data.feels_like)}° F</h3>
         </>

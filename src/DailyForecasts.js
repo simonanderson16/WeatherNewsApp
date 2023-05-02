@@ -33,10 +33,10 @@ export default function DailyForecasts({data}) {
           <div style={{ overflowX: 'scroll', marginRight: "20px" }}>
             <div style={{ display: 'flex', flexDirection: 'row'}}>
               {data.map((day, index) => (
-                <div key={index} style={{ marginRight: '20px', marginBottom: "20px", border: "solid 1px black", borderRadius: "15px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", backgroundColor: "#92afea"  }}>
+                <div key={index} style={{ marginRight: '10px', marginBottom: "20px", border: "solid 0px black", borderRadius: "15px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", backgroundColor: "#92afea", boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.6)"  }}>
                   <p style={{fontWeight: "bolder"}}>{nextSevenDays[index]}</p>
                   <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} />
-                  <p>Low: {kelvinToFahrenheit(day.temp.min)}° F  High: {kelvinToFahrenheit(day.temp.max)}° F</p>
+                  <p>High: {kelvinToFahrenheit(day.temp.max)}° F {"\n"} Low: {kelvinToFahrenheit(day.temp.min)}° F</p>
                   <p key={index}>{toTitleCase(day.weather[0].description)}</p>
                 </div>
               ))}

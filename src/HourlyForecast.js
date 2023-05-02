@@ -36,7 +36,7 @@ export default function HourlyForecast({data}) {
         <div style={{ overflowX: 'scroll', marginRight: "20px" }}>
           <div style={{ display: 'flex', flexDirection: 'row'}}>
             {data.map((hour, index) => (
-              <div key={index} style={{ marginRight: '20px', marginBottom: "20px", border: "solid 1px black", borderRadius: "15px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", backgroundColor: "#92afea"  }}>
+              <div key={index} style={{ marginRight: '10px', marginBottom: "20px", border: "solid 0px black", borderRadius: "15px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", backgroundColor: "#92afea", boxShadow: "inset 0 0 10px rgba(0, 0, 0, 0.6)" }}>
                 <p style={{fontWeight: "bolder"}}>{hours[index] + ":00"}</p>
                 <img src={`https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png`} />
                 <p>{kelvinToFahrenheit(hour.temp)}° F</p>
