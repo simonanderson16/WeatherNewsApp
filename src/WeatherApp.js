@@ -25,9 +25,7 @@ export default function WeatherApp() {
         fetch(nytURL) 
             .then((response) => response.json())
             .then((data) => {
-                //console.log(data);
                 let topFive = data.results.slice(0,5);
-                //console.log(topFive);
                 setNewsData(topFive);
             })
             .catch((e) => console.log(e));
@@ -40,11 +38,8 @@ export default function WeatherApp() {
         fetch(coordinateURL.href)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 data = data[0];
                 setCoordinates({latitude: data.lat, longitude: data.lon})
-                // console.log(data.lat);
-                // console.log(data.lon);
             })
             .catch((e) => console.log("Error: " + e));
         
@@ -54,10 +49,8 @@ export default function WeatherApp() {
     // get new weather data when coordinates change
     useEffect(() => {
         if(coordinates) {
-            console.log(coordinates);
             getWeatherData();
             //setWeatherData(weather);
-            //console.log(weather);
         }
     }, [coordinates])
 
@@ -66,11 +59,9 @@ export default function WeatherApp() {
         weatherURL.searchParams.append("lat", coordinates.latitude);
         weatherURL.searchParams.append("lon", coordinates.longitude);
         weatherURL.searchParams.append("appid", API_KEY);
-        console.log(weatherURL.href);
         fetch(weatherURL.href)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 setWeatherData(data);
             })
             .catch((e) => console.log("Error: " + e));
